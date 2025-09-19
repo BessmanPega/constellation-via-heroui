@@ -2,6 +2,7 @@
 /* eslint-disable no-console */
 import { useEffect, useMemo, useState } from "react";
 import {
+  getSdkConfig,
   loginIfNecessary,
   sdkIsLoggedIn,
 } from "@pega/auth/lib/sdk-auth-manager";
@@ -136,18 +137,29 @@ export default function PegaPage() {
     // Create options object with default values
     const options: any = {
       pageName: "pyEmbedAssignment",
-      startingFields: {
-        Package: "Basic",
-      },
     };
 
+    const sdkConfig = await getSdkConfig();
+    let caseType: string = sdkConfig.serverConfig.appMashupCaseType;
+
+    if (!caseType) {
+      const availableCaseTypes: Array<any> | string =
+        PCore.getEnvironmentInfo().environmentInfoObject?.pyCaseTypeList ??
+        "none";
+
+      if (availableCaseTypes === "none") {
+        console.log(
+          "The Pega environment appears to not have any available case types.",
+        );
+      } else {
+        caseType = availableCaseTypes[0].pyWorkTypeImplementationClassName;
+      }
+    }
+
     // Create a new case using the mashup API
+    console.log("Using case type: ", caseType);
     PCore.getMashupApi()
-      .createCase(
-        "DIXL-MediaCo-Work-NewService",
-        PCore.getConstants().APP.APP,
-        options,
-      )
+      .createCase(caseType, PCore.getConstants().APP.APP, options)
       .then(() => {
         console.log("createCase rendering is complete");
       });
