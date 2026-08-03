@@ -24,6 +24,8 @@ const localSdkComponentMap = {
   Assignment: Assignment,
   AssignmentCard: AssignmentCard,
   AutoComplete: AutoComplete,
+  Currency: TextInput,
+  Decimal: TextInput,
   Date: Date,
   DefaultForm: DefaultForm,
   Dropdown: Dropdown,
