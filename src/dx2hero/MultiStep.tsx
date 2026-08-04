@@ -48,14 +48,19 @@ export default function MultiStep(props: PropsWithChildren<MultiStepProps>) {
 
   return (
     <div className="text-left">
-      <Breadcrumbs className="px-4 py-2">
+      <Breadcrumbs className="px-4 py-3">
         {arNavigationSteps.map((mainStep: any, index: any) => {
+          const isCurrent = mainStep.ID === currentStep?.ID;
+
           return (
-            <BreadcrumbItem
-              key={mainStep.actionID}
-              isCurrent={mainStep.ID === currentStep?.ID}
-            >
-              <Chip>{index + 1}</Chip>
+            <BreadcrumbItem key={mainStep.actionID} isCurrent={isCurrent}>
+              <Chip
+                color={isCurrent ? "primary" : "default"}
+                size="sm"
+                variant={isCurrent ? "solid" : "flat"}
+              >
+                {index + 1}
+              </Chip>
               &nbsp;{mainStep.name}
             </BreadcrumbItem>
           );

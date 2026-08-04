@@ -317,7 +317,7 @@ export const FlowContainer = (props: FlowContainerProps) => {
     return (
       hasBanner && (
         <div className="w-full px-4">
-          <Alert className="my-4" color="warning">
+          <Alert className="my-4" color="warning" variant="flat">
             {messages}
           </Alert>
         </div>
@@ -329,15 +329,17 @@ export const FlowContainer = (props: FlowContainerProps) => {
     <div id={buildName}>
       {!bShowConfirm &&
         (!todo_showTodo ? (
-          <Card className="items-start">
-            <span className="px-4 py-2 text-lg">
+          <Card className="items-start card-elevated w-full">
+            <span className="px-4 pt-4 pb-2 text-lg font-semibold text-foreground">
               {localizedVal(containerName, undefined, key)}
             </span>
             {displayPageMessages()}
             {bHasCaseMessages && (
-              <Alert hideIcon color="success">
-                {caseMessages}
-              </Alert>
+              <div className="w-full px-4">
+                <Alert hideIcon className="my-2" color="success" variant="flat">
+                  {caseMessages}
+                </Alert>
+              </div>
             )}
             <Assignment getPConnect={getPConnect} itemKey={itemKey}>
               {rootViewElement}

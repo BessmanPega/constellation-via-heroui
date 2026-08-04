@@ -32,7 +32,7 @@ export default function AssignmentCard(
 
   return (
     <>
-      <div className="px-4 py-2">{children}</div>
+      <div className="px-4 py-4">{children}</div>
       {arMainButtons && arSecondaryButtons && (
         <ActionButtons
           arMainButtons={arMainButtons}

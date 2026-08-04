@@ -10,7 +10,14 @@ import { getSdkComponentMap } from "@pega/react-sdk-components/lib/bridge/helper
 import { compareSdkPCoreVersions } from "@pega/react-sdk-components/lib/components/helpers/versionHelpers";
 import StoreContext from "@pega/react-sdk-components/lib/bridge/Context/StoreContext";
 import createPConnectComponent from "@pega/react-sdk-components/lib/bridge/react_pconnect";
-import { Button, Card, CardBody, CardFooter, CardHeader } from "@heroui/react";
+import {
+  Button,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Spinner,
+} from "@heroui/react";
 
 import localSdkComponentMap from "../../sdk-local-component-map";
 
@@ -167,29 +174,43 @@ export default function PegaPage() {
 
   return (
     <DefaultLayout>
-      <section className="flex flex-col items-center justify-center">
+      <section className="flex flex-col items-center justify-center py-section-lg">
         {cancelled ? (
-          <h3>Cancelling...</h3>
+          <div className="flex flex-col items-center gap-4">
+            <Spinner color="primary" size="lg" />
+            <h3 className="text-default-600">Cancelling...</h3>
+          </div>
         ) : (
           <div className="inline-block text-center justify-center">
             {!isLoggedIn ? (
-              <h3>Logging in...</h3>
+              <div className="flex flex-col items-center gap-4">
+                <Spinner color="primary" size="lg" />
+                <h3 className="text-default-600">Logging in...</h3>
+              </div>
             ) : (
               !caseCreated && (
                 <div className="max-w-prose">
-                  <Card className="p-4">
-                    <CardHeader>
-                      <h1 className={title()}>Welcome!</h1>
+                  <Card className="card-elevated p-2">
+                    <CardHeader className="flex flex-col items-start gap-2 pt-6 px-6">
+                      <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary text-2xl">
+                        👋
+                      </div>
+                      <h1 className={title({ size: "sm" })}>Welcome!</h1>
                     </CardHeader>
-                    <CardBody>
-                      <p>
+                    <CardBody className="px-6">
+                      <p className="text-default-600">
                         We're so happy you're interested in our service! We aim
                         to provide the best in the business. When you're ready
                         to join us, click the button below.
                       </p>
                     </CardBody>
-                    <CardFooter>
-                      <Button color="primary" onClick={createCaseButtonClicked}>
+                    <CardFooter className="px-6 pb-6">
+                      <Button
+                        className="btn-transition"
+                        color="primary"
+                        radius="full"
+                        onClick={createCaseButtonClicked}
+                      >
                         Let's get started!
                       </Button>
                     </CardFooter>

@@ -22,7 +22,10 @@ export default function ActionButtons(props: ActionButtonsProps) {
     return (
       <Button
         key={button.name}
+        className="btn-transition"
         color={ordinal}
+        radius="full"
+        variant={ordinal === "primary" ? "solid" : "bordered"}
         // eslint-disable-next-line @typescript-eslint/no-unused-vars, prettier/prettier
         onPress={(_e: PressEvent) => { handleButtonPress(button.jsAction, ordinal); }}
       >

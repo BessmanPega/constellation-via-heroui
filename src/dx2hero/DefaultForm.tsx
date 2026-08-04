@@ -59,10 +59,10 @@ export default function DefaultForm(
       childrenClassName = "grid grid-cols-1 gap-4";
       break;
     case "2":
-      childrenClassName = "grid grid-cols-2 gap-4";
+      childrenClassName = "grid grid-cols-1 sm:grid-cols-2 gap-4";
       break;
     case "3":
-      childrenClassName = "grid grid-cols-3 gap-4";
+      childrenClassName = "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4";
       break;
     default:
       childrenClassName = "grid grid-cols-1 gap-4";
