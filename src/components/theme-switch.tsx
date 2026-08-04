@@ -43,7 +43,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
       aria-label={isSelected ? "Switch to dark mode" : "Switch to light mode"}
       {...getBaseProps({
         className: clsx(
-          "px-px transition-opacity hover:opacity-80 cursor-pointer",
+          "px-px transition-all duration-250 hover:opacity-80 cursor-pointer",
           className,
           classNames?.base,
         ),
@@ -66,16 +66,19 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
               "pt-px",
               "px-0",
               "mx-0",
+              "transition-transform duration-250",
             ],
             classNames?.wrapper,
           ),
         })}
       >
-        {isSelected ? (
-          <MoonFilledIcon size={22} />
-        ) : (
-          <SunFilledIcon size={22} />
-        )}
+        <div className="transition-all duration-250 scale-100">
+          {isSelected ? (
+            <MoonFilledIcon size={22} />
+          ) : (
+            <SunFilledIcon size={22} />
+          )}
+        </div>
       </div>
     </Component>
   );

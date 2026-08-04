@@ -51,3 +51,43 @@ export const subtitle = tv({
     fullWidth: true,
   },
 });
+
+export const sectionTitle = tv({
+  base: "text-2xl lg:text-3xl font-semibold tracking-tight text-foreground",
+  variants: {
+    color: {
+      default: "text-foreground",
+      primary: "text-primary",
+      accent: "text-accent-600 dark:text-accent-400",
+    },
+  },
+  defaultVariants: {
+    color: "default",
+  },
+});
+
+export const sectionSubtitle = tv({
+  base: "text-base lg:text-lg text-default-500 mt-2",
+  variants: {
+    color: {
+      default: "text-default-500",
+      muted: "text-default-400",
+    },
+  },
+  defaultVariants: {
+    color: "default",
+  },
+});
+
+export const label = tv({
+  base: "text-sm font-medium text-default-700 dark:text-default-600",
+  variants: {
+    required: {
+      true: "after:content-['*'] after:ml-1 after:text-danger",
+    },
+  },
+});
+
+export const caption = tv({
+  base: "text-xs text-default-500 mt-1",
+});

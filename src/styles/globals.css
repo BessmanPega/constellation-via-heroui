@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    --transition-default: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    transition: var(--transition-default);
+  }
+
+  * {
+    @apply transition-colors duration-250;
+  }
+}
+
+@layer components {
+  .btn-transition {
+    @apply transition-all duration-250 ease-out;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-b;
+  }
+
+  .card-elevated {
+    @apply rounded-lg border border-default-200 shadow-md;
+  }
+
+  .section-spacing {
+    @apply space-y-section-md;
+  }
+}
