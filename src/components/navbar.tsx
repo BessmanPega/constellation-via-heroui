@@ -118,6 +118,9 @@ export const Navbar = () => {
           <InstagramIcon className="text-default-500 hover:text-foreground transition-colors duration-250" />
         </Link>
         <ThemeSwitch />
+      </NavbarContent>
+
+      <NavbarContent className="lg:hidden" justify="end">
         <NavbarMenuToggle />
       </NavbarContent>
 
