@@ -19,9 +19,8 @@ import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import {
   TwitterIcon,
-  GithubIcon,
-  DiscordIcon,
-  HeartFilledIcon,
+  InstagramIcon,
+  FacebookIcon,
   SearchIcon,
 } from "@/components/icons";
 import { Logo } from "@/components/icons";
@@ -103,32 +102,32 @@ export const Navbar = () => {
           <Link isExternal href={siteConfig.links.twitter} title="Twitter">
             <TwitterIcon className="text-default-500 hover:text-foreground transition-colors duration-250" />
           </Link>
-          <Link isExternal href={siteConfig.links.discord} title="Discord">
-            <DiscordIcon className="text-default-500 hover:text-foreground transition-colors duration-250" />
+          <Link isExternal href={siteConfig.links.instagram} title="Instagram">
+            <InstagramIcon className="text-default-500 hover:text-foreground transition-colors duration-250" />
           </Link>
-          <Link isExternal href={siteConfig.links.github} title="GitHub">
-            <GithubIcon className="text-default-500 hover:text-foreground transition-colors duration-250" />
+          <Link isExternal href={siteConfig.links.facebook} title="Facebook">
+            <FacebookIcon className="text-default-500 hover:text-foreground transition-colors duration-250" />
           </Link>
           <ThemeSwitch />
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
         <NavbarItem className="hidden md:flex">
           <Button
-            isExternal
             as={Link}
-            className="text-sm font-normal text-default-600 bg-default-100 transition-all duration-250 hover:bg-default-200"
-            href={siteConfig.links.sponsor}
-            startContent={<HeartFilledIcon className="text-danger" />}
-            variant="flat"
+            className="text-sm font-medium"
+            color="primary"
+            href="/accommodations"
+            radius="full"
+            variant="solid"
           >
-            Sponsor
+            Reserve
           </Button>
         </NavbarItem>
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Link isExternal href={siteConfig.links.github}>
-          <GithubIcon className="text-default-500 hover:text-foreground transition-colors duration-250" />
+        <Link isExternal href={siteConfig.links.instagram}>
+          <InstagramIcon className="text-default-500 hover:text-foreground transition-colors duration-250" />
         </Link>
         <ThemeSwitch />
         <NavbarMenuToggle />

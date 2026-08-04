@@ -3,38 +3,39 @@ import DefaultLayout from "@/layouts/default";
 import { ContentLayout } from "@/components/ContentLayout";
 import { DocsSidebar } from "@/components/DocsSidebar";
 
-const docsSections = [
+const amenitySections = [
   {
-    title: "Getting Started",
+    title: "Arrival & Departure",
     items: [
-      { label: "Introduction", href: "/docs/intro", active: true },
-      { label: "Installation", href: "/docs/installation" },
-      { label: "First Steps", href: "/docs/first-steps" },
+      { label: "Check-In", href: "/amenities/check-in", active: true },
+      { label: "Check-Out", href: "/amenities/check-out" },
+      { label: "Valet & Parking", href: "/amenities/valet" },
+      { label: "Luggage Storage", href: "/amenities/luggage" },
     ],
   },
   {
-    title: "Guides",
+    title: "Dining",
     items: [
-      { label: "Components", href: "/docs/components" },
-      { label: "Customization", href: "/docs/customization" },
-      { label: "Theming", href: "/docs/theming" },
-      { label: "Best Practices", href: "/docs/best-practices" },
+      { label: "The Dining Room", href: "/amenities/dining-room" },
+      { label: "Room Service", href: "/amenities/room-service" },
+      { label: "The Bar", href: "/amenities/bar" },
+      { label: "Private Events", href: "/amenities/private-events" },
     ],
   },
   {
-    title: "API Reference",
+    title: "Wellness",
     items: [
-      { label: "Component Props", href: "/docs/api/props" },
-      { label: "Hooks", href: "/docs/api/hooks" },
-      { label: "Utilities", href: "/docs/api/utilities" },
+      { label: "The Spa", href: "/amenities/spa" },
+      { label: "Fitness Room", href: "/amenities/fitness" },
+      { label: "In-Room Treatments", href: "/amenities/in-room-treatments" },
     ],
   },
   {
-    title: "Examples",
+    title: "Concierge Services",
     items: [
-      { label: "Form Examples", href: "/docs/examples/forms" },
-      { label: "Layout Patterns", href: "/docs/examples/layouts" },
-      { label: "Advanced Patterns", href: "/docs/examples/advanced" },
+      { label: "Reservations & Tickets", href: "/amenities/reservations" },
+      { label: "Local Recommendations", href: "/amenities/recommendations" },
+      { label: "Business Services", href: "/amenities/business" },
     ],
   },
 ];
@@ -44,40 +45,50 @@ export default function DocsPage() {
     <DefaultLayout>
       <section className="py-section-lg">
         <ContentLayout
-          sidebar={<DocsSidebar sections={docsSections} />}
+          sidebar={<DocsSidebar sections={amenitySections} />}
         >
-          <h1 className={sectionTitle({ color: "default" })}>Introduction</h1>
+          <h1 className={sectionTitle({ color: "default" })}>Amenities</h1>
           <p className="text-default-600 mt-4">
-            Welcome to the documentation. This is a comprehensive guide to help
-            you get started with our platform and make the most of its features.
+            What follows is not exhaustive so much as illustrative. If you
+            require something not listed here, ask the concierge — chances
+            are it exists and simply isn't advertised.
           </p>
 
           <h2 className={sectionTitle({ color: "default", class: "mt-12" })}>
-            What You'll Learn
-          </h2>
-          <ul className="space-y-3 mt-4 text-default-600">
-            <li>• How to install and set up the platform</li>
-            <li>• Component usage and customization</li>
-            <li>• Best practices for building applications</li>
-            <li>• Advanced patterns and techniques</li>
-            <li>• Troubleshooting and FAQ</li>
-          </ul>
-
-          <h2 className={sectionTitle({ color: "default", class: "mt-12" })}>
-            Quick Start
+            Arrival & Departure
           </h2>
           <p className="text-default-600 mt-4">
-            Get up and running in minutes. Start by exploring the Getting
-            Started section to learn the basics, then move on to more advanced
-            topics as you become familiar with the platform.
+            Check-in is at three, check-out at noon. Both are handled at the
+            desk in the lobby, or, if you prefer, from the back seat of the
+            car that brought you.
           </p>
 
           <h2 className={sectionTitle({ color: "default", class: "mt-12" })}>
-            Need Help?
+            Dining
           </h2>
           <p className="text-default-600 mt-4">
-            Check out the FAQ section or reach out to our support team. We're
-            here to help!
+            Breakfast is served in the Garden Room until eleven. Dinner runs
+            later than you'd expect and stops asking questions after the
+            second course. Room service does not sleep, though it does
+            occasionally take its time.
+          </p>
+
+          <h2 className={sectionTitle({ color: "default", class: "mt-12" })}>
+            Wellness
+          </h2>
+          <p className="text-default-600 mt-4">
+            The spa occupies the lower level and asks that phones be left
+            upstairs. The fitness room is small, well-equipped, and rarely
+            used before ten.
+          </p>
+
+          <h2 className={sectionTitle({ color: "default", class: "mt-12" })}>
+            Concierge Services
+          </h2>
+          <p className="text-default-600 mt-4">
+            The concierge desk arranges dinner reservations, theater tickets,
+            car service, and the sort of favors better requested in person
+            than described on a website.
           </p>
         </ContentLayout>
       </section>

@@ -70,6 +70,63 @@ export const TwitterIcon: React.FC<IconSvgProps> = ({
   );
 };
 
+export const InstagramIcon: React.FC<IconSvgProps> = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}) => {
+  return (
+    <svg
+      fill="none"
+      height={size || height}
+      viewBox="0 0 24 24"
+      width={size || width}
+      {...props}
+    >
+      <rect
+        height="18"
+        rx="5"
+        ry="5"
+        stroke="currentColor"
+        strokeWidth="2"
+        width="18"
+        x="3"
+        y="3"
+      />
+      <circle
+        cx="12"
+        cy="12"
+        r="4"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <circle cx="17.5" cy="6.5" fill="currentColor" r="1" />
+    </svg>
+  );
+};
+
+export const FacebookIcon: React.FC<IconSvgProps> = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}) => {
+  return (
+    <svg
+      height={size || height}
+      viewBox="0 0 24 24"
+      width={size || width}
+      {...props}
+    >
+      <path
+        d="M22 12a10 10 0 1 0-11.5 9.87v-6.99h-2.5v-2.88h2.5V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.88h-2.34v6.99A10 10 0 0 0 22 12z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+};
+
 export const GithubIcon: React.FC<IconSvgProps> = ({
   size = 24,
   width,

@@ -2,54 +2,54 @@ import { sectionTitle, sectionSubtitle } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
 import { BlogCard } from "@/components/BlogCard";
 
-const blogPosts = [
+const dispatches = [
   {
-    title: "Getting Started with Constellation",
+    title: "A Note from the General Manager",
     excerpt:
-      "Learn how to set up your first project and start building amazing applications.",
-    date: "Mar 15, 2024",
-    category: "Tutorial",
-    slug: "getting-started",
+      "On the occasion of our 113th year, a few words on why so little has changed, and why that's rather the point.",
+    date: "Jul 28, 2026",
+    category: "Notes",
+    slug: "note-from-the-general-manager",
   },
   {
-    title: "Advanced Component Customization",
+    title: "This Season at Beaumont",
     excerpt:
-      "Discover how to customize components to match your brand and design requirements.",
-    date: "Mar 10, 2024",
-    category: "Guide",
-    slug: "advanced-customization",
+      "The garden terrace reopens for the summer, a touch later than usual, on account of the roses.",
+    date: "Jul 12, 2026",
+    category: "Events",
+    slug: "this-season-at-beaumont",
   },
   {
-    title: "Best Practices for Accessibility",
+    title: "The Sunday Roast Returns",
     excerpt:
-      "Ensure your applications are accessible to all users with these proven practices.",
-    date: "Mar 5, 2024",
-    category: "Best Practices",
-    slug: "accessibility-practices",
+      "Chef Whitfield brings back a tradition retired in the nineties, over the objections of no one in particular.",
+    date: "Jun 30, 2026",
+    category: "Culinary",
+    slug: "the-sunday-roast-returns",
   },
   {
-    title: "Performance Optimization Tips",
+    title: "On the Matter of the Lobby Clock",
     excerpt:
-      "Optimize your application performance with these actionable tips and tricks.",
-    date: "Feb 28, 2024",
-    category: "Performance",
-    slug: "performance-tips",
+      "A brief history of the clock that has told the wrong time, faithfully, since 1958.",
+    date: "Jun 14, 2026",
+    category: "History",
+    slug: "on-the-matter-of-the-lobby-clock",
   },
   {
-    title: "TypeScript Integration Guide",
+    title: "A Guide to the Neighborhood, for Those Who Ask",
     excerpt:
-      "Master TypeScript with our comprehensive guide to type-safe development.",
-    date: "Feb 20, 2024",
-    category: "Tutorial",
-    slug: "typescript-guide",
+      "Where to walk, what to skip, and which gallery opening is worth the trouble this month.",
+    date: "May 29, 2026",
+    category: "Notes",
+    slug: "a-guide-to-the-neighborhood",
   },
   {
-    title: "Dark Mode Implementation",
+    title: "In Praise of the Off-Season",
     excerpt:
-      "Add dark mode support to your application in just a few simple steps.",
-    date: "Feb 15, 2024",
-    category: "Feature",
-    slug: "dark-mode",
+      "A modest defense of visiting when everyone else has the sense not to.",
+    date: "May 3, 2026",
+    category: "Notes",
+    slug: "in-praise-of-the-off-season",
   },
 ];
 
@@ -58,14 +58,17 @@ export default function BlogPage() {
     <DefaultLayout>
       <section className="py-section-lg">
         <div className="text-center mb-section-md">
-          <h1 className={sectionTitle({ color: "default" })}>Blog</h1>
+          <h1 className={sectionTitle({ color: "default" })}>
+            The Dispatch
+          </h1>
           <p className={sectionSubtitle({ color: "muted", class: "max-w-2xl mx-auto" })}>
-            Tips, guides, and best practices for building better applications.
+            Notes from the front desk, the kitchen, and the odd corner of the
+            garden. Published when there's something worth saying.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {blogPosts.map((post) => (
+          {dispatches.map((post) => (
             <BlogCard
               key={post.slug}
               category={post.category}

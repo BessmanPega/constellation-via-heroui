@@ -36,7 +36,7 @@ export const BlogCard = ({
       <CardFooter className="px-6 py-3">
         <a
           className="text-sm font-medium text-primary hover:text-primary/80 transition-colors"
-          href={`/blog/${slug}`}
+          href={`/dispatch/${slug}`}
         >
           Read more →
         </a>

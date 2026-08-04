@@ -1,7 +1,12 @@
 import { Link } from "@heroui/link";
 
 import { siteConfig } from "@/config/site";
-import { Logo, TwitterIcon, GithubIcon, DiscordIcon } from "@/components/icons";
+import {
+  Logo,
+  TwitterIcon,
+  InstagramIcon,
+  FacebookIcon,
+} from "@/components/icons";
 
 const footerLinks = [
   {
@@ -48,6 +53,13 @@ export const Footer = () => {
             <p className="text-sm text-default-500 mt-3 max-w-xs">
               {siteConfig.description}
             </p>
+            <p className="text-sm text-default-500 mt-4">
+              33 Marlborough Street
+              <br />
+              Boston, Massachusetts 02116
+              <br />
+              (617) 555-0142
+            </p>
             <div className="flex items-center gap-3 mt-4">
               <Link
                 isExternal
@@ -58,17 +70,17 @@ export const Footer = () => {
               </Link>
               <Link
                 isExternal
-                href={siteConfig.links.discord}
-                title="Discord"
+                href={siteConfig.links.instagram}
+                title="Instagram"
               >
-                <DiscordIcon className="text-default-500 hover:text-foreground transition-colors duration-250" />
+                <InstagramIcon className="text-default-500 hover:text-foreground transition-colors duration-250" />
               </Link>
               <Link
                 isExternal
-                href={siteConfig.links.github}
-                title="GitHub"
+                href={siteConfig.links.facebook}
+                title="Facebook"
               >
-                <GithubIcon className="text-default-500 hover:text-foreground transition-colors duration-250" />
+                <FacebookIcon className="text-default-500 hover:text-foreground transition-colors duration-250" />
               </Link>
             </div>
           </div>
