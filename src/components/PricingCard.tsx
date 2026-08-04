@@ -17,6 +17,8 @@ interface PricingCardProps {
   description: string;
   features: string[];
   isPopular?: boolean;
+  period?: string;
+  buttonLabel?: string;
 }
 
 export const PricingCard = ({
@@ -25,6 +27,8 @@ export const PricingCard = ({
   description,
   features,
   isPopular,
+  period = "month",
+  buttonLabel = "Get Started",
 }: PricingCardProps) => {
   return (
     <Card
@@ -42,7 +46,7 @@ export const PricingCard = ({
         <p className="text-default-500">{description}</p>
         <div className="flex items-baseline gap-1">
           <span className="text-4xl font-bold">${price}</span>
-          <span className="text-default-500">/month</span>
+          <span className="text-default-500">/{period}</span>
         </div>
         <ul className="space-y-3 my-4">
           {features.map((feature, idx) => (
@@ -59,7 +63,7 @@ export const PricingCard = ({
           color={isPopular ? "primary" : "default"}
           variant={isPopular ? "solid" : "bordered"}
         >
-          Get Started
+          {buttonLabel}
         </Button>
       </CardFooter>
     </Card>

@@ -2,26 +2,41 @@ import { sectionTitle, sectionSubtitle } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
 import { TeamCard } from "@/components/TeamCard";
 
-const team = [
+const leadership = [
   {
-    name: "Alice Johnson",
-    role: "Founder & CEO",
-    bio: "10+ years of experience building scalable applications",
+    name: "Beatrice Winslow",
+    role: "General Manager",
+    bio: "Has run the hotel since 1994 and has opinions about the flowers.",
   },
   {
-    name: "Bob Smith",
-    role: "CTO",
-    bio: "Full-stack developer passionate about great UX",
+    name: "Julian Thorne",
+    role: "Head Concierge",
+    bio: "Can produce dinner reservations, theater tickets, and alibis on short notice.",
   },
   {
-    name: "Carol Williams",
-    role: "Head of Design",
-    bio: "Design system enthusiast and accessibility advocate",
+    name: "Margaux Whitfield",
+    role: "Executive Chef",
+    bio: "Trained in Lyon. Tolerates no substitutions.",
   },
   {
-    name: "David Brown",
-    role: "Lead Developer",
-    bio: "TypeScript and React expert",
+    name: "Edmund Carrow",
+    role: "Head of Housekeeping",
+    bio: "Has never once raised his voice, and has never needed to.",
+  },
+];
+
+const convictions = [
+  {
+    title: "Discretion",
+    body: "We remember your name and forget your business.",
+  },
+  {
+    title: "Craft",
+    body: "Nothing arrives at your table, or your door, without someone having minded it closely.",
+  },
+  {
+    title: "Continuity",
+    body: "We have changed remarkably little since 1911, and see no urgent reason to start.",
   },
 ];
 
@@ -30,29 +45,30 @@ export default function AboutPage() {
     <DefaultLayout>
       <section className="py-section-lg">
         <div className="text-center mb-section-md">
-          <h1 className={sectionTitle({ color: "default" })}>About Us</h1>
+          <h1 className={sectionTitle({ color: "default" })}>About</h1>
           <p className={sectionSubtitle({ color: "muted", class: "max-w-2xl mx-auto" })}>
-            We're building the future of application development, one component
-            at a time.
+            A short account of who we are, and why we've stayed that way.
           </p>
         </div>
 
         <div className="bg-default-100 rounded-lg p-8 mb-section-lg text-center">
-          <h2 className={sectionTitle({ color: "default" })}>Our Mission</h2>
+          <h2 className={sectionTitle({ color: "default" })}>A Brief History</h2>
           <p className="text-default-600 max-w-2xl mx-auto mt-4">
-            To empower developers and designers to create beautiful,
-            accessible, and performant applications without compromising on
-            developer experience. We believe that great tools should be both
-            powerful and intuitive.
+            Hotel Beaumont opened in 1911 at the corner of Marlborough and
+            Clarendon, built on the conviction that a hotel ought to know its
+            guests better than they know themselves. It has weathered two
+            wars, several recessions, and at least one attempt at
+            modernization, none of which left much of a mark. The lobby clock
+            has not been reset since 1958. We consider this a feature.
           </p>
         </div>
 
         <div className="mb-section-lg">
           <h2 className={sectionTitle({ color: "default", class: "mb-8" })}>
-            Meet the Team
+            The Staff
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {team.map((member) => (
+            {leadership.map((member) => (
               <TeamCard
                 key={member.name}
                 bio={member.bio}
@@ -65,36 +81,17 @@ export default function AboutPage() {
 
         <div className="border-t border-default-200 pt-section-lg">
           <h2 className={sectionTitle({ color: "default", class: "mb-8" })}>
-            Our Values
+            A Few Convictions
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="font-semibold text-foreground mb-2">
-                Quality First
-              </h3>
-              <p className="text-default-600">
-                We never compromise on quality. Every component is thoroughly
-                tested and documented.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-foreground mb-2">
-                Developer Joy
-              </h3>
-              <p className="text-default-600">
-                We focus on creating tools that bring joy to development,
-                making coding a pleasure.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-foreground mb-2">
-                Community
-              </h3>
-              <p className="text-default-600">
-                We believe in the power of community and are dedicated to
-                supporting our users.
-              </p>
-            </div>
+            {convictions.map((conviction) => (
+              <div key={conviction.title}>
+                <h3 className="font-semibold text-foreground mb-2">
+                  {conviction.title}
+                </h3>
+                <p className="text-default-600">{conviction.body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -1,29 +1,25 @@
 import { Link } from "@heroui/link";
-import { Snippet } from "@heroui/snippet";
-import { Code } from "@heroui/code";
 import { button as buttonStyles } from "@heroui/theme";
 
-import { siteConfig } from "@/config/site";
 import { title, subtitle, sectionTitle, sectionSubtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
 import DefaultLayout from "@/layouts/default";
 import { FeatureCard } from "@/components/FeatureCard";
 
-const SparklesIcon = (props: any) => (
+const LeafIcon = (props: any) => (
   <svg {...props} fill="currentColor" viewBox="0 0 24 24">
-    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+    <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z" />
   </svg>
 );
 
-const LightbulbIcon = (props: any) => (
+const DiningIcon = (props: any) => (
   <svg {...props} fill="currentColor" viewBox="0 0 24 24">
-    <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-6c2.76 0 5-2.24 5-5 0-2.49-2.01-4.9-5-4.9s-5 2.41-5 4.9c0 2.76 2.24 5 5 5zm0-8c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6-6H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2z" />
+    <path d="M7 2a1 1 0 0 1 1 1v6.17a2 2 0 0 1-.59 1.41L6 12v9a1 1 0 1 1-2 0v-9l-1.41-1.42A2 2 0 0 1 2 9.17V3a1 1 0 1 1 2 0v6h1V3a1 1 0 1 1 2 0v6h1V3a1 1 0 0 1 1-1zm10 0a5 5 0 0 0-5 5v6a2 2 0 0 0 1.7 1.98L13 15v6a1 1 0 1 0 2 0v-6l-.7-.02A2 2 0 0 0 16 13V8h1v13a1 1 0 1 0 2 0V2z" />
   </svg>
 );
 
-const CheckCircleIcon = (props: any) => (
+const BellIcon = (props: any) => (
   <svg {...props} fill="currentColor" viewBox="0 0 24 24">
-    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+    <path d="M12 2a1 1 0 0 1 1 1v1.06A8.001 8.001 0 0 1 20 12v5l1.6 2.13A1 1 0 0 1 20.8 21H3.2a1 1 0 0 1-.8-1.87L4 17v-5a8.001 8.001 0 0 1 7-7.94V3a1 1 0 0 1 1-1zM9 21a3 3 0 0 0 6 0H9z" />
   </svg>
 );
 
@@ -31,75 +27,61 @@ export default function IndexPage() {
   return (
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-        <div className="inline-block max-w-lg text-center justify-center">
-          <span className={title()}>Make&nbsp;</span>
-          <span className={title({ color: "violet" })}>beautiful&nbsp;</span>
-          <br />
-          <span className={title()}>
-            websites regardless of your design experience.
-          </span>
+        <div className="inline-block max-w-2xl text-center justify-center">
+          <span className={title()}>A certain standard,&nbsp;</span>
+          <span className={title({ color: "gold" })}>quietly kept.&nbsp;</span>
           <div className={subtitle({ class: "mt-4" })}>
-            Beautiful, fast and modern React UI library.
+            Hotel Beaumont has stood at the corner of Marlborough and
+            Clarendon since 1911. We have made very few changes since, and we
+            don't intend to start now.
           </div>
         </div>
 
         <div className="flex gap-3">
           <Link
-            isExternal
             className={buttonStyles({
               color: "primary",
               radius: "full",
               variant: "shadow",
             })}
-            href={siteConfig.links.docs}
+            href="/accommodations"
           >
-            Documentation
+            Reserve a Room
           </Link>
           <Link
-            isExternal
             className={buttonStyles({ variant: "bordered", radius: "full" })}
-            href={siteConfig.links.github}
+            href="/amenities"
           >
-            <GithubIcon size={20} />
-            GitHub
+            Explore Amenities
           </Link>
-        </div>
-
-        <div className="mt-8">
-          <Snippet hideCopyButton hideSymbol variant="bordered">
-            <span>
-              Get started by editing{" "}
-              <Code color="primary">pages/index.tsx</Code>
-            </span>
-          </Snippet>
         </div>
       </section>
 
       <section className="py-section-lg">
         <div className="text-center mb-section-md">
           <h2 className={sectionTitle({ color: "default" })}>
-            Why Choose Us
+            The Essentials
           </h2>
           <p className={sectionSubtitle({ color: "muted", class: "max-w-2xl mx-auto" })}>
-            Everything you need to build beautiful, performant applications
-            with confidence.
+            Nothing you won't find at every good hotel — only, we think, a bit
+            better attended to.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <FeatureCard
-            description="Fully typed components with TypeScript support for better development experience"
-            icon={<SparklesIcon size={24} />}
-            title="Type Safe"
+            description="A quiet room, warm water, and no music piped in to fill the silence."
+            icon={<LeafIcon size={24} />}
+            title="Spa & Bath"
           />
           <FeatureCard
-            description="Customizable themes and components that adapt to your brand and design needs"
-            icon={<LightbulbIcon size={24} />}
-            title="Highly Customizable"
+            description="Dinner is served until eleven. Breakfast, we're told, is the better meal."
+            icon={<DiningIcon size={24} />}
+            title="The Dining Room"
           />
           <FeatureCard
-            description="Built for accessibility with ARIA attributes and keyboard navigation out of the box"
-            icon={<CheckCircleIcon size={24} />}
-            title="Accessible"
+            description="Reservations, recommendations, and the occasional discreet favor."
+            icon={<BellIcon size={24} />}
+            title="Concierge"
           />
         </div>
       </section>
@@ -107,24 +89,26 @@ export default function IndexPage() {
       <section className="py-section-lg border-t border-default-200">
         <div className="text-center mb-section-md">
           <h2 className={sectionTitle({ color: "default" })}>
-            Who Uses Our Platform
+            As Featured In
           </h2>
           <p className={sectionSubtitle({ color: "muted", class: "max-w-2xl mx-auto" })}>
-            Trusted by companies of all sizes to build and scale their
-            applications.
+            We do not seek out attention, but it does find us occasionally.
           </p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {["Company A", "Company B", "Company C", "Company D"].map(
-            (company) => (
-              <div
-                key={company}
-                className="flex items-center justify-center p-4 rounded-lg border border-default-200 text-default-500 font-medium"
-              >
-                {company}
-              </div>
-            ),
-          )}
+          {[
+            "Condé Nast Traveler",
+            "Town & Country",
+            "The Boston Globe",
+            "Departures",
+          ].map((publication) => (
+            <div
+              key={publication}
+              className="flex items-center justify-center p-4 rounded-lg border border-default-200 text-default-500 font-serif italic"
+            >
+              {publication}
+            </div>
+          ))}
         </div>
       </section>
     </DefaultLayout>
