@@ -11,6 +11,7 @@ import FlowContainer from "./src/dx2hero/FlowContainer";
 import MultiStep from "./src/dx2hero/MultiStep";
 import Phone from "./src/dx2hero/Phone";
 import RadioButtons from "./src/dx2hero/RadioButtons";
+import TextArea from "./src/dx2hero/TextArea";
 import TextInput from "./src/dx2hero/TextInput";
 import ToDo from "./src/dx2hero/ToDo";
 import TwoColumn from "./src/dx2hero/TwoColumn";
@@ -34,6 +35,7 @@ const localSdkComponentMap = {
   MultiStep: MultiStep,
   Phone: Phone,
   RadioButtons: RadioButtons,
+  TextArea: TextArea,
   TextInput: TextInput,
   Todo: ToDo, // NOTE: ConstellationJS Engine uses "Todo" and not "ToDo"!!!
   TwoColumn: TwoColumn,
