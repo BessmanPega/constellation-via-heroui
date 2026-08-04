@@ -178,14 +178,16 @@ export default function PegaPage() {
         {cancelled ? (
           <div className="flex flex-col items-center gap-4">
             <Spinner color="primary" size="lg" />
-            <h3 className="text-default-600">Cancelling...</h3>
+            <h3 className="text-default-600">Closing your inquiry...</h3>
           </div>
         ) : (
           <div className="inline-block text-center justify-center">
             {!isLoggedIn ? (
               <div className="flex flex-col items-center gap-4">
                 <Spinner color="primary" size="lg" />
-                <h3 className="text-default-600">Logging in...</h3>
+                <h3 className="text-default-600">
+                  One moment while we open your file...
+                </h3>
               </div>
             ) : (
               !caseCreated && (
@@ -193,15 +195,18 @@ export default function PegaPage() {
                   <Card className="card-elevated p-2">
                     <CardHeader className="flex flex-col items-start gap-2 pt-6 px-6">
                       <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary text-2xl">
-                        👋
+                        🧳
                       </div>
-                      <h1 className={title({ size: "sm" })}>Welcome!</h1>
+                      <h1 className={title({ size: "sm" })}>
+                        Left Something Behind?
+                      </h1>
                     </CardHeader>
                     <CardBody className="px-6">
                       <p className="text-default-600">
-                        We're so happy you're interested in our service! We aim
-                        to provide the best in the business. When you're ready
-                        to join us, click the button below.
+                        It happens more often than you'd think — a scarf on
+                        the settee, a book by the fire, a watch left on the
+                        nightstand. Tell us what's missing and we'll see it
+                        found.
                       </p>
                     </CardBody>
                     <CardFooter className="px-6 pb-6">
@@ -211,7 +216,7 @@ export default function PegaPage() {
                         radius="full"
                         onClick={createCaseButtonClicked}
                       >
-                        Let's get started!
+                        Report a Lost Item
                       </Button>
                     </CardFooter>
                   </Card>
