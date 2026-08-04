@@ -99,18 +99,8 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal href={siteConfig.links.twitter} title="Twitter">
-            <TwitterIcon className="text-default-500 hover:text-foreground transition-colors duration-250" />
-          </Link>
-          <Link isExternal href={siteConfig.links.instagram} title="Instagram">
-            <InstagramIcon className="text-default-500 hover:text-foreground transition-colors duration-250" />
-          </Link>
-          <Link isExternal href={siteConfig.links.facebook} title="Facebook">
-            <FacebookIcon className="text-default-500 hover:text-foreground transition-colors duration-250" />
-          </Link>
           <ThemeSwitch />
         </NavbarItem>
-        <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
         <NavbarItem className="hidden md:flex">
           <Button
             as={Link}

@@ -11,9 +11,10 @@ const LeafIcon = (props: any) => (
   </svg>
 );
 
-const DiningIcon = (props: any) => (
-  <svg {...props} fill="currentColor" viewBox="0 0 24 24">
-    <path d="M7 2a1 1 0 0 1 1 1v6.17a2 2 0 0 1-.59 1.41L6 12v9a1 1 0 1 1-2 0v-9l-1.41-1.42A2 2 0 0 1 2 9.17V3a1 1 0 1 1 2 0v6h1V3a1 1 0 1 1 2 0v6h1V3a1 1 0 0 1 1-1zm10 0a5 5 0 0 0-5 5v6a2 2 0 0 0 1.7 1.98L13 15v6a1 1 0 1 0 2 0v-6l-.7-.02A2 2 0 0 0 16 13V8h1v13a1 1 0 1 0 2 0V2z" />
+const CocktailIcon = (props: any) => (
+  <svg {...props} fill="currentColor" viewBox="0 0 48 48">
+    <polygon points="8,9 40,9 25.5,29 25.5,37 22.5,37 22.5,29" />
+    <rect height="3" rx="1" width="20" x="14" y="37" />
   </svg>
 );
 
@@ -74,9 +75,9 @@ export default function IndexPage() {
             title="Spa & Bath"
           />
           <FeatureCard
-            description="Dinner is served until eleven. Breakfast, we're told, is the better meal."
-            icon={<DiningIcon size={24} />}
-            title="The Dining Room"
+            description="The bar opens at five. Closing time has always been more of a suggestion."
+            icon={<CocktailIcon size={24} />}
+            title="The Cocktail Lounge"
           />
           <FeatureCard
             description="Reservations, recommendations, and the occasional discreet favor."
