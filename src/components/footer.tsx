@@ -5,23 +5,23 @@ import { Logo, TwitterIcon, GithubIcon, DiscordIcon } from "@/components/icons";
 
 const footerLinks = [
   {
-    title: "Product",
+    title: "Stay",
     links: [
-      { label: "Docs", href: "/docs" },
-      { label: "Pricing", href: "/pricing" },
-      { label: "Blog", href: "/blog" },
+      { label: "Amenities", href: "/amenities" },
+      { label: "Accommodations", href: "/accommodations" },
     ],
   },
   {
-    title: "Company",
+    title: "The Hotel",
     links: [
       { label: "About", href: "/about" },
-      { label: "Contact", href: "/contact" },
+      { label: "The Dispatch", href: "/dispatch" },
     ],
   },
   {
-    title: "Legal",
+    title: "Guest Services",
     links: [
+      { label: "Lost Property", href: "/lost-property" },
       { label: "Privacy", href: "/privacy" },
       { label: "Terms", href: "/terms" },
     ],
@@ -41,7 +41,9 @@ export const Footer = () => {
               href="/"
             >
               <Logo />
-              <p className="font-bold text-inherit">ACME</p>
+              <p className="font-serif font-semibold text-inherit tracking-tight">
+                Hotel Beaumont
+              </p>
             </Link>
             <p className="text-sm text-default-500 mt-3 max-w-xs">
               {siteConfig.description}

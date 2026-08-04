@@ -1,7 +1,7 @@
 import { tv } from "tailwind-variants";
 
 export const title = tv({
-  base: "tracking-tight inline font-semibold",
+  base: "tracking-tight inline font-semibold font-serif",
   variants: {
     color: {
       violet: "from-[#FF1CF7] to-[#b249f8]",
@@ -53,12 +53,12 @@ export const subtitle = tv({
 });
 
 export const sectionTitle = tv({
-  base: "text-2xl lg:text-3xl font-semibold tracking-tight text-foreground",
+  base: "text-2xl lg:text-3xl font-semibold tracking-tight text-foreground font-serif",
   variants: {
     color: {
       default: "text-foreground",
       primary: "text-primary",
-      accent: "text-accent-600 dark:text-accent-400",
+      accent: "text-hunter-600 dark:text-hunter-300",
     },
   },
   defaultVariants: {

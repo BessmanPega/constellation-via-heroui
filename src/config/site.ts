@@ -1,65 +1,54 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Vite + HeroUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "Hotel Beaumont",
+  description:
+    "A quiet corner of the city, held to an old standard. Established in confidence, maintained by habit.",
   navItems: [
     {
       label: "Home",
       href: "/",
     },
     {
-      label: "Docs",
-      href: "/docs",
+      label: "Amenities",
+      href: "/amenities",
     },
     {
-      label: "Pricing",
-      href: "/pricing",
+      label: "Accommodations",
+      href: "/accommodations",
     },
     {
-      label: "Blog",
-      href: "/blog",
+      label: "The Dispatch",
+      href: "/dispatch",
     },
     {
       label: "About",
       href: "/about",
     },
     {
-      label: "Pega",
-      href: "/pega",
+      label: "Lost Property",
+      href: "/lost-property",
     },
   ],
   navMenuItems: [
     {
-      label: "Profile",
-      href: "/profile",
+      label: "My Reservations",
+      href: "/my-reservations",
     },
     {
-      label: "Dashboard",
-      href: "/dashboard",
+      label: "Loyalty Account",
+      href: "/loyalty",
     },
     {
-      label: "Projects",
-      href: "/projects",
-    },
-    {
-      label: "Team",
-      href: "/team",
-    },
-    {
-      label: "Calendar",
-      href: "/calendar",
-    },
-    {
-      label: "Settings",
-      href: "/settings",
+      label: "Concierge Requests",
+      href: "/concierge",
     },
     {
       label: "Help & Feedback",
       href: "/help-feedback",
     },
     {
-      label: "Logout",
+      label: "Sign Out",
       href: "/logout",
     },
   ],

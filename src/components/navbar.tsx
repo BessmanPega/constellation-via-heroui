@@ -64,7 +64,9 @@ export const Navbar = () => {
             href="/"
           >
             <Logo />
-            <p className="font-bold text-inherit">ACME</p>
+            <p className="font-serif font-semibold text-inherit tracking-tight">
+              Hotel Beaumont
+            </p>
           </Link>
         </NavbarBrand>
         <div className="hidden lg:flex gap-4 justify-start ml-2">
