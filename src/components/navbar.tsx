@@ -13,6 +13,7 @@ import {
 } from "@heroui/navbar";
 import { link as linkStyles } from "@heroui/theme";
 import clsx from "clsx";
+import { useLocation } from "react-router-dom";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
@@ -26,6 +27,8 @@ import {
 import { Logo } from "@/components/icons";
 
 export const Navbar = () => {
+  const location = useLocation();
+
   const searchInput = (
     <Input
       aria-label="Search"
@@ -48,11 +51,15 @@ export const Navbar = () => {
   );
 
   return (
-    <HeroUINavbar maxWidth="xl" position="sticky">
+    <HeroUINavbar
+      className="border-b border-default-200"
+      maxWidth="xl"
+      position="sticky"
+    >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand className="gap-3 max-w-fit">
           <Link
-            className="flex justify-start items-center gap-1"
+            className="flex justify-start items-center gap-1 transition-opacity duration-250 hover:opacity-80"
             color="foreground"
             href="/"
           >
@@ -61,20 +68,28 @@ export const Navbar = () => {
           </Link>
         </NavbarBrand>
         <div className="hidden lg:flex gap-4 justify-start ml-2">
-          {siteConfig.navItems.map((item) => (
-            <NavbarItem key={item.href}>
-              <Link
-                className={clsx(
-                  linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium"
-                )}
-                color="foreground"
-                href={item.href}
-              >
-                {item.label}
-              </Link>
-            </NavbarItem>
-          ))}
+          {siteConfig.navItems.map((item) => {
+            const isActive = location.pathname === item.href;
+
+            return (
+              <NavbarItem key={item.href} isActive={isActive}>
+                <Link
+                  className={clsx(
+                    linkStyles({ color: "foreground" }),
+                    "relative py-1 transition-colors duration-250",
+                    "after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary after:transition-all after:duration-250",
+                    isActive
+                      ? "text-primary font-medium after:w-full"
+                      : "after:w-0 hover:after:w-full hover:text-primary",
+                  )}
+                  color="foreground"
+                  href={item.href}
+                >
+                  {item.label}
+                </Link>
+              </NavbarItem>
+            );
+          })}
         </div>
       </NavbarContent>
 
@@ -84,13 +99,13 @@ export const Navbar = () => {
       >
         <NavbarItem className="hidden sm:flex gap-2">
           <Link isExternal href={siteConfig.links.twitter} title="Twitter">
-            <TwitterIcon className="text-default-500" />
+            <TwitterIcon className="text-default-500 hover:text-foreground transition-colors duration-250" />
           </Link>
           <Link isExternal href={siteConfig.links.discord} title="Discord">
-            <DiscordIcon className="text-default-500" />
+            <DiscordIcon className="text-default-500 hover:text-foreground transition-colors duration-250" />
           </Link>
           <Link isExternal href={siteConfig.links.github} title="GitHub">
-            <GithubIcon className="text-default-500" />
+            <GithubIcon className="text-default-500 hover:text-foreground transition-colors duration-250" />
           </Link>
           <ThemeSwitch />
         </NavbarItem>
@@ -99,7 +114,7 @@ export const Navbar = () => {
           <Button
             isExternal
             as={Link}
-            className="text-sm font-normal text-default-600 bg-default-100"
+            className="text-sm font-normal text-default-600 bg-default-100 transition-all duration-250 hover:bg-default-200"
             href={siteConfig.links.sponsor}
             startContent={<HeartFilledIcon className="text-danger" />}
             variant="flat"
@@ -111,7 +126,7 @@ export const Navbar = () => {
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
         <Link isExternal href={siteConfig.links.github}>
-          <GithubIcon className="text-default-500" />
+          <GithubIcon className="text-default-500 hover:text-foreground transition-colors duration-250" />
         </Link>
         <ThemeSwitch />
         <NavbarMenuToggle />
@@ -119,16 +134,40 @@ export const Navbar = () => {
 
       <NavbarMenu>
         {searchInput}
-        <div className="mx-4 mt-2 flex flex-col gap-2">
+        <div className="mx-4 mt-2 flex flex-col gap-1">
+          {siteConfig.navItems.map((item) => {
+            const isActive = location.pathname === item.href;
+
+            return (
+              <NavbarMenuItem key={item.href}>
+                <Link
+                  className={clsx(
+                    "w-full py-2 transition-colors duration-250 hover:text-primary",
+                    isActive ? "text-primary font-medium" : "text-foreground",
+                  )}
+                  href={item.href}
+                  size="lg"
+                >
+                  {item.label}
+                </Link>
+              </NavbarMenuItem>
+            );
+          })}
+        </div>
+        <div className="mx-4 mt-6 pt-6 border-t border-default-200 flex flex-col gap-1">
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link
+                className={clsx(
+                  "w-full py-2 transition-colors duration-250",
+                  index === siteConfig.navMenuItems.length - 1
+                    ? "hover:text-danger"
+                    : "hover:text-primary",
+                )}
                 color={
-                  index === 2
-                    ? "primary"
-                    : index === siteConfig.navMenuItems.length - 1
-                      ? "danger"
-                      : "foreground"
+                  index === siteConfig.navMenuItems.length - 1
+                    ? "danger"
+                    : "foreground"
                 }
                 href="#"
                 size="lg"
