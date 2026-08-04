@@ -18,9 +18,7 @@ import { useLocation } from "react-router-dom";
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import {
-  TwitterIcon,
   InstagramIcon,
-  FacebookIcon,
   SearchIcon,
 } from "@/components/icons";
 import { Logo } from "@/components/icons";
