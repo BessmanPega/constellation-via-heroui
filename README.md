@@ -1,5 +1,7 @@
 # Constellation via HeroUI
 
+https://github.com/user-attachments/assets/c1ddb190-5a9b-4643-bcbd-2c2310739e77
+
 This app shows you how to use [Pega's React SDK](https://docs.pega.com/bundle/constellation-sdk/page/constellation-sdks/sdks/constellation-sdks.html) to render a [case](https://docs.pega.com/bundle/platform/page/platform/case-management/case-management-overview.html) in a [React](https://react.dev/) application via [HeroUI](https://heroui.com). It is an example of [Pega's Center-out architecture](https://docs.pega.com/bundle/platform/page/platform/user-experience/why-constellation.html) in action: while the workflow is *defined* with a [Constellation UI](https://docs.pega.com/bundle/platform/page/platform/user-experience/constellation-architecture.html) in the [Pega Platform](https://docs.pega.com/bundle/platform/page/platform/hub/pega-platform-overview.html), it is *rendered* within this application using HeroUI.
 
 ## How to run this app
