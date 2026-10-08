@@ -13,8 +13,9 @@ This app shows you how to use [Pega's React SDK](https://docs.pega.com/bundle/co
 1. `git clone https://github.com/BessmanPega/constellation-via-heroui.git`
 2. `npm install`
 3. `npm run build`
-4. Create `public/sdk-config.json`
-5. `npm run dev`
+4. Create in Pega Infinity an [OAuth 2.0 Client Registration](https://docs.pega.com/bundle/platform/page/platform/security/configure-oauth-2-client-registration.html) that is configured to use password credentials
+5. Move `example-sdk-config.json` to `public/sdk-config.json` and fill out every field labeled `<MANDATORY>`
+6. `npm run dev`
 
 ## Purpose
 This app is meant to be studied as a reference, not deployed to production. After playing around with it to get the idea, the next step would be to use the Constellation React SDK to render a Pega case in your own React application using your own UI library.
